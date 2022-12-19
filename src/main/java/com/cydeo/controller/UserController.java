@@ -1,6 +1,7 @@
 package com.cydeo.controller;
 
 
+import com.cydeo.annotation.ExecutionTime;
 import com.cydeo.dto.ResponseWrapper;
 import com.cydeo.dto.UserDTO;
 import com.cydeo.service.UserService;
@@ -22,6 +23,7 @@ public class UserController {
         this.userService = userService;
     }
 
+    @ExecutionTime
     @GetMapping
     @RolesAllowed({"Manager", "Admin"})
     public ResponseEntity<ResponseWrapper> getUsers(){
